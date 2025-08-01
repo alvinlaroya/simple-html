@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <pre id="pre"></pre>
+        <button onclick="getJsonData()">Get JSON DATA</button>
+    </div>
+
+    <script>
+        function getJsonData() {
+            const jsonData = {
+                "name": "John",
+                "age": 30,
+                "city": "New York"
+            }
+            const pre = document.getElementById('pre');
+            const text = pre.textContent;
+            const lines = text.split('\n');
+            const lineCount = lines.length;
+            const lineHeight = 20;
+            const totalHeight = lineCount * lineHeight;
+            pre.style.height = `${totalHeight}px`;
+            pre.textContent = JSON.stringify(jsonData, null, 2);
+            return jsonData;
+        }
+    </script>
+</body>
+</html>
